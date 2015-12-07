@@ -1,5 +1,7 @@
 package com.vkarppinen.tasker;
 
+import java.util.Date;
+import java.util.UUID;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -9,39 +11,75 @@ import android.os.Parcelable;
  */
 
 public class Task implements Parcelable {
-	private int id;
+	private UUID id;
 	private String name;
+	private Date dateDue;
 	
-	public Task(String name) {
-		
-		// TODO this.id = CreateID();
+	
+	/*
+	 * Default constructor.
+	 */
+	public Task(String name, Date dateDue) {
+		this.id = UUID.randomUUID();
 		this.name = name;
+		this.dateDue = dateDue;
 	}
 	
-	public int getID() { 
-		return this.id;
-	}
-	
-	public String toString() {
-		
-		return this.getName();
+	/*
+	 * Alternative constructor
+	 */
+	public Task(String name) {
+		this.id = UUID.randomUUID();
+		this.name = name;
+		this.dateDue = new Date();
 	}
 
+	/*
+	 * Getters
+	 */
+	public UUID getID() { 
+		return this.id;
+	}
 	protected String getName() {
 		return this.name;
 	}
+	protected Date getDateDue() {
+		return this.dateDue;
+	}
 
+	/*
+	 * Setters
+	 */
+	protected void setName(String name) {
+		// TODO muuta toimimaan
+	}
+	protected void setDateDue(Object dateDue) {
+		// TODO muuta toimimaan
+	}
+
+	
+	/*
+	 * Custom methods
+	 */
+	public String toString() {	
+		return this.getName();
+	}
 	
 	/*
 	 * Parcelable methods 
 	 */
 	
-    private Task(Parcel in) {
+    
+	private Task(Parcel in) {
         this.name = in.readString();
+        this.id = UUID.fromString(in.readString());
+        this.dateDue = new Date(); //TODO Tämän pitäisi toimia siten, että kun datepickkeristä tulee data sen perusteella pvm.
     }
 
     public void writeToParcel(Parcel out, int flags) {
         out.writeString(name);
+        out.writeString(id.toString());
+        out.writeString(dateDue.toString());
     }
 
  
@@ -58,5 +96,4 @@ public class Task implements Parcelable {
             return new Task[size];
         }
     };
-
 }

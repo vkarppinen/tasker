@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+// TODO T‰t‰ layouttia tulisi muokata siten, ett‰ create nappi oikealla ylh‰‰ll‰.
+
 @SuppressWarnings("deprecation")
 public class NewTaskActivity extends ActionBarActivity {
 
@@ -49,7 +51,11 @@ public class NewTaskActivity extends ActionBarActivity {
 	 * Developer created methods. 
 	 */
 	
-	/** Called when the user clicks the Create button */
+	/** 
+	 * Called when the user clicks the Create button 
+	 * 
+	 * TODO Lis‰‰ k‰yttˆliittym‰‰n p‰iv‰m‰‰r‰n asetin.
+	 */
 	public void createTask(View view) {
 	    Intent intent = new Intent(this, TaskListActivity.class);
 	    EditText TaskNameField = (EditText) findViewById(R.id.editTaskName);

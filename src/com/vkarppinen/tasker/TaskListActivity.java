@@ -113,6 +113,11 @@ public class TaskListActivity extends ActionBarActivity {
 		    tv.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 		    tv.setText(task.getName());
 		    tr.addView(tv);
+		    
+		    TextView tv2 = new TextView(this);
+		    tv2.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+		    tv2.setText(task.getDateDue().toString());
+		    tr.addView(tv2);
 
 		    table.addView(tr);
 		}

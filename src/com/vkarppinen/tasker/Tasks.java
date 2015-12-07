@@ -23,7 +23,9 @@ public class Tasks {
 	}
 	
 	public void add(Task task) {
-		this.tasks.add(task);
+		if (!tasks.contains(task)) {
+			this.tasks.add(task);
+		}
 	}
 	
 	public void delete(Task task) {
@@ -31,7 +33,11 @@ public class Tasks {
 	}
 	
 	public void update(Task task) {
-		// TODO muuta toimimaan oikein
+		for (Task TaskToBeUpdated : tasks) {
+			if (task.getID() == TaskToBeUpdated.getID()) {
+				TaskToBeUpdated.setName(task.getName());
+				TaskToBeUpdated.setDateDue(task.getDateDue());
+			}
+		}
 	}
-	
 }
