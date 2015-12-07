@@ -1,0 +1,125 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (javaClasses.cpp:126), pid=5744, tid=4124
+#  fatal error: Invalid layout of preloaded class
+#
+# JRE version:  (8.0_31-b13) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.31-b07 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000021f0800):  JavaThread "Unknown thread" [_thread_in_vm, id=4124, stack(0x0000000002070000,0x0000000002170000)]
+
+Stack: [0x0000000002070000,0x0000000002170000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x3169ba]
+V  [jvm.dll+0x2674c3]
+V  [jvm.dll+0x268103]
+V  [jvm.dll+0x2885c4]
+C  [KERNELBASE.dll+0x702ce]
+C  [ntdll.dll+0x98992]
+C  [ntdll.dll+0x83f66]
+C  [ntdll.dll+0x9633d]
+C  [ntdll.dll+0x13c00]
+C  [ntdll.dll+0x9544a]
+V  [jvm.dll+0x206c01]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000021f0800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=4124, stack(0x0000000002070000,0x0000000002170000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.051 loading class java/lang/CharSequence done
+Event: 0.051 loading class java/lang/String done
+Event: 0.051 loading class java/lang/Class
+Event: 0.051 loading class java/lang/reflect/AnnotatedElement
+Event: 0.052 loading class java/lang/reflect/AnnotatedElement done
+Event: 0.052 loading class java/lang/reflect/GenericDeclaration
+Event: 0.052 loading class java/lang/reflect/GenericDeclaration done
+Event: 0.052 loading class java/lang/reflect/Type
+Event: 0.052 loading class java/lang/reflect/Type done
+Event: 0.052 loading class java/lang/Class done
+
+
+Dynamic libraries:
+0x00007ff6c35a0000 - 0x00007ff6c35d4000 	C:\Program Files\Java\jre1.8.0_31\bin\javaw.exe
+0x00007ffd97040000 - 0x00007ffd97201000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd96130000 - 0x00007ffd961dd000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ffd93bf0000 - 0x00007ffd93dcd000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ffd96a00000 - 0x00007ffd96aa6000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ffd96b70000 - 0x00007ffd96c0d000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ffd960d0000 - 0x00007ffd9612b000 	C:\WINDOWS\system32\sechost.dll
+0x00007ffd96ca0000 - 0x00007ffd96dc6000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ffd966c0000 - 0x00007ffd9680e000 	C:\WINDOWS\system32\USER32.dll
+0x00007ffd96870000 - 0x00007ffd969f6000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ffd83100000 - 0x00007ffd83374000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10240.16384_none_f41f7b285750ef43\COMCTL32.dll
+0x00007ffd97000000 - 0x00007ffd97036000 	C:\WINDOWS\system32\IMM32.DLL
+0x00007ffd94970000 - 0x00007ffd94acc000 	C:\WINDOWS\system32\MSCTF.dll
+0x0000000060990000 - 0x0000000060a62000 	C:\Program Files\Java\jre1.8.0_31\bin\msvcr100.dll
+0x0000000060da0000 - 0x00000000615fa000 	C:\Program Files\Java\jre1.8.0_31\bin\server\jvm.dll
+0x00007ffd96560000 - 0x00007ffd96568000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ffd8a0e0000 - 0x00007ffd8a0e9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffd96f80000 - 0x00007ffd96fe9000 	C:\WINDOWS\system32\WS2_32.dll
+0x00007ffd96ff0000 - 0x00007ffd96ff8000 	C:\WINDOWS\system32\NSI.dll
+0x00007ffd91ca0000 - 0x00007ffd91cc3000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd91c40000 - 0x00007ffd91c6c000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffd93af0000 - 0x00007ffd93b34000 	C:\WINDOWS\system32\cfgmgr32.dll
+0x00007ffd92320000 - 0x00007ffd92347000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x0000000061d40000 - 0x0000000061d4f000 	C:\Program Files\Java\jre1.8.0_31\bin\verify.dll
+0x0000000061d10000 - 0x0000000061d38000 	C:\Program Files\Java\jre1.8.0_31\bin\java.dll
+0x0000000061cf0000 - 0x0000000061d06000 	C:\Program Files\Java\jre1.8.0_31\bin\zip.dll
+0x00007ffd7d120000 - 0x00007ffd7d2aa000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 -Xbootclasspath:C:\Users\Valtteri Karppinen\AppData\Local\Android\android-sdk\platforms\android-23\android.jar 
+java_command: com.vkarppinen.tasker.Tasks
+java_class_path (initial): D:\Documents\Projektit\Tasker\bin\classes;D:\Documents\Projektit\appcompat_v7\libs\android-support-v4.jar;D:\Documents\Projektit\appcompat_v7\libs\android-support-v7-appcompat.jar;D:\Documents\Projektit\appcompat_v7\bin\appcompat_v7.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jre1.8.0_31/bin/server;C:/Program Files/Java/jre1.8.0_31/bin;C:/Program Files/Java/jre1.8.0_31/lib/amd64;C:\Python27\;C:\Python27\Scripts;C:\bin\;C:\Perl64\site\bin;C:\Perl64\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Extensis\Suitcase Fusion 6\;C:\Program Files\nodejs\;C:\Users\Valtteri Karppinen\AppData\Roaming\npm;C:\Users\Valtteri Karppinen\AppData\Local\Programs\Git\cmd;C:\Program Files\Sublime Text 3;C:\Users\Valtteri Karppinen\Desktop;
+USERNAME=Valtteri Karppinen
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, clmul, tsc, tscinvbit
+
+Memory: 4k page, physical 3966092k(1386420k free), swap 8029324k(4662936k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.31-b07) for windows-amd64 JRE (1.8.0_31-b13), built on Dec 17 2014 21:00:28 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Dec 02 16:44:52 2015
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

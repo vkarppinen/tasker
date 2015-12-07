@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tasker</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Task list layout strings -->
+    <string name="heading">Tasklist</string>
+    <string name="btn_new_task">add new</string>
+    
+    <!-- New task layout strings -->
+    <string name="title_activity_new_task">New task</string>
+    <string name="subtitle_task_name">task name</string>
+    <string name="btn_submit_task">create</string>
+
+</resources>
