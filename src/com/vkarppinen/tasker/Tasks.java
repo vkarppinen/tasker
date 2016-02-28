@@ -179,7 +179,7 @@ public class Tasks {
 		this.builder = new NotificationCompat.Builder(mContext)
 	              .setSmallIcon(R.drawable.ic_notification)
 	              .setContentTitle("A Task is due")
-	              .setPriority(2)
+	              .setPriority(1)
 	              .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
 	              .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
 	              .setLights(Color.GREEN, 250, 250)

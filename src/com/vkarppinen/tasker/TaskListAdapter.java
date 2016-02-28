@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -50,6 +51,7 @@ public class TaskListAdapter extends BaseAdapter {
             v = inflater.inflate(R.layout.custom_row, parent, false);
         TextView textDateDue = (TextView) v.findViewById(R.id.taskDueDate);
         TextView textTaskName = (TextView) v.findViewById(R.id.taskName);
+        ImageView taskPriority = (ImageView) v.findViewById(R.id.taskPriority);
         
         View deleteTask = v.findViewById(R.id.btnCompleteTask);
        	deleteTask.setOnClickListener(new Button.OnClickListener() {
@@ -61,18 +63,29 @@ public class TaskListAdapter extends BaseAdapter {
         });
         
        	// Format the text shown in date field.
-       	Date date = data.get(position).getDateDue();
-        Calendar c = Calendar.getInstance();
-       	c.setTime(date);
-        int year = c.get(Calendar.YEAR);
-        String month = c.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
-        int day = c.get(Calendar.DAY_OF_MONTH);
-        int hour = c.get(Calendar.HOUR_OF_DAY);
-        String min = String.format(Locale.getDefault(), "%02d", c.get(Calendar.MINUTE));
+       	Date taskDate = data.get(position).getDateDue();
+        Calendar taskCal = Calendar.getInstance();
+       	taskCal.setTime(taskDate);
+        int year = taskCal.get(Calendar.YEAR);
+        String month = taskCal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault());
+        int day = taskCal.get(Calendar.DAY_OF_MONTH);
+        int hour = taskCal.get(Calendar.HOUR_OF_DAY);
+        String min = String.format(Locale.getDefault(), "%02d", taskCal.get(Calendar.MINUTE));
         String dateText = day + ". " + month + " " + year + " klo " + hour + ":" + min;
         
         textDateDue.setText(dateText);
         textTaskName.setText(data.get(position).getName());
+        
+        // Change taskpriority image according to task date.
+        Calendar nowCal = Calendar.getInstance();
+        if (taskCal.get(Calendar.DAY_OF_YEAR) - nowCal.get(Calendar.DAY_OF_YEAR) < 1) {
+        	taskPriority.setImageResource(R.drawable.priority_high);
+        } else if (taskCal.get(Calendar.DAY_OF_YEAR) - nowCal.get(Calendar.DAY_OF_YEAR) < 3){
+        	taskPriority.setImageResource(R.drawable.priority_medium);
+        } else {
+        	taskPriority.setImageResource(R.drawable.priority_low);
+        }
+
         
         return v;
     }	
