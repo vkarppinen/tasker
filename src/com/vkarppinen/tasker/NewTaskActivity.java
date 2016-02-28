@@ -90,26 +90,21 @@ public class NewTaskActivity extends AppCompatActivity {
 		}
 			
 	    // Handle exception if required fields are empty and if assigned dateTime has passed.
-//	    if (name.length() > 0 && date.length() > 0 && time.length() > 0) {
-//		    
-//	    	if (dateDue.compareTo(dateNow) < 0 ) {
-//				Toast toast = Toast.makeText(getApplicationContext(), R.string.date_error, Toast.LENGTH_SHORT);
-//		    	toast.show();
-//			} else {
-//				Task task = new Task(name, date, time);
-//				intent.putExtra("Task", task);
-//			    setResult(RESULT_OK, intent);
-//			    finish();
-//			}	
-//	    } else {
-//	    	Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_empty_task_fields, Toast.LENGTH_SHORT);
-//	    	toast.show();
-//	    }
-	    
-	    Task task = new Task(name, date, time);
-		intent.putExtra("Task", task);
-	    setResult(RESULT_OK, intent);
-	    finish();
+	    if (name.length() > 0 && date.length() > 0 && time.length() > 0) {
+		    
+	    	if (dateDue.compareTo(dateNow) < 0 ) {
+				Toast toast = Toast.makeText(getApplicationContext(), R.string.date_error, Toast.LENGTH_SHORT);
+		    	toast.show();
+			} else {
+				Task task = new Task(name, date, time);
+				intent.putExtra("Task", task);
+			    setResult(RESULT_OK, intent);
+			    finish();
+			}	
+	    } else {
+	    	Toast toast = Toast.makeText(getApplicationContext(), R.string.toast_empty_task_fields, Toast.LENGTH_SHORT);
+	    	toast.show();
+	    }
 	    
 	}
 }
