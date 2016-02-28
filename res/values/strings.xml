@@ -3,14 +3,27 @@
 
     <string name="app_name">Tasker</string>
     <string name="action_settings">Settings</string>
+    <string name="not_implemented">Not implemented</string>
 
     <!-- Task list layout strings -->
     <string name="heading">Tasklist</string>
     <string name="btn_new_task">add new</string>
-    
+
     <!-- New task layout strings -->
     <string name="title_activity_new_task">New task</string>
-    <string name="subtitle_task_name">task name</string>
-    <string name="btn_submit_task">create</string>
+    <string name="editTaskNameHint">Task name</string>
+    <string name="editDueDateHint">Date due</string>
+    <string name="editDueTimeHint">Alarm time</string>
+    <string name="btn_submit_task">Create</string>
+    <string name="toast_empty_task_fields">Some of the required fields are empty.</string>
+    <string name="date_error">Assigned date has passed.</string>
+    
+    <!-- Date dialog strings -->
+    <string name="title_set_date">Date due</string>
+    <string name="btn_set">Set</string>
+    <string name="btn_cancel">Cancel</string>
+    
+    <!-- Notification strings -->
+    <string name="notification_title">A task is due.</string>
 
 </resources>

@@ -2001,8 +2001,9 @@ containing a value of this type.
         public static final int abc_textfield_search_material=0x7f020044;
         public static final int complete_task_ic=0x7f020045;
         public static final int ic_launcher=0x7f020046;
-        public static final int notification_template_icon_bg=0x7f020048;
-        public static final int task_priority_dot=0x7f020047;
+        public static final int ic_notification=0x7f020047;
+        public static final int notification_template_icon_bg=0x7f020049;
+        public static final int task_priority_dot=0x7f020048;
     }
     public static final class id {
         public static final int action0=0x7f090058;
@@ -2027,19 +2028,21 @@ containing a value of this type.
         public static final int beginning=0x7f09001e;
         public static final int btnCompleteTask=0x7f090057;
         public static final int btnNewTask=0x7f090067;
-        public static final int button1=0x7f090053;
         public static final int buttonPanel=0x7f09002b;
         public static final int cancel_action=0x7f090059;
         public static final int checkbox=0x7f090039;
         public static final int chronometer=0x7f09005f;
         public static final int collapseActionView=0x7f09001a;
         public static final int contentPanel=0x7f090031;
+        public static final int create_task=0x7f090069;
         public static final int custom=0x7f090037;
         public static final int customPanel=0x7f090036;
         public static final int decor_content_parent=0x7f09003f;
         public static final int default_activity_button=0x7f090027;
         public static final int disableHome=0x7f09000d;
-        public static final int editTaskName=0x7f090052;
+        public static final int editDueDate=0x7f090052;
+        public static final int editDueTime=0x7f090053;
+        public static final int editTaskName=0x7f090051;
         public static final int edit_query=0x7f090043;
         public static final int end=0x7f09001f;
         public static final int end_padder=0x7f090064;
@@ -2095,13 +2098,12 @@ containing a value of this type.
         public static final int submit_area=0x7f09004c;
         public static final int tabMode=0x7f09000c;
         public static final int taskDueDate=0x7f090055;
+        public static final int taskList=0x7f090066;
         public static final int taskName=0x7f090056;
         public static final int taskPriority=0x7f090054;
-        public static final int tasksTable=0x7f090066;
         public static final int text=0x7f090062;
         public static final int text2=0x7f090060;
         public static final int textSpacerNoButtons=0x7f090034;
-        public static final int textView1=0x7f090051;
         public static final int time=0x7f09005e;
         public static final int title=0x7f09002a;
         public static final int title_template=0x7f09002f;
@@ -2261,11 +2263,21 @@ containing a value of this type.
         public static final int abc_toolbar_collapse_description=0x7f0a0004;
         public static final int action_settings=0x7f0a0015;
         public static final int app_name=0x7f0a0014;
-        public static final int btn_new_task=0x7f0a0017;
-        public static final int btn_submit_task=0x7f0a001a;
+        public static final int btn_cancel=0x7f0a0022;
+        public static final int btn_new_task=0x7f0a0018;
+        public static final int btn_set=0x7f0a0021;
+        public static final int btn_submit_task=0x7f0a001d;
+        public static final int date_error=0x7f0a001f;
+        public static final int editDueDateHint=0x7f0a001b;
+        public static final int editDueTimeHint=0x7f0a001c;
+        public static final int editTaskNameHint=0x7f0a001a;
         /**  Task list layout strings 
          */
-        public static final int heading=0x7f0a0016;
+        public static final int heading=0x7f0a0017;
+        public static final int not_implemented=0x7f0a0016;
+        /**  Notification strings 
+         */
+        public static final int notification_title=0x7f0a0023;
         /**  Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in
          values/config.xml) and must be truncated. May need to be localized
@@ -2273,10 +2285,13 @@ containing a value of this type.
          [CHAR LIMIT=4] 
          */
         public static final int status_bar_notification_info_overflow=0x7f0a0011;
-        public static final int subtitle_task_name=0x7f0a0019;
         /**  New task layout strings 
          */
-        public static final int title_activity_new_task=0x7f0a0018;
+        public static final int title_activity_new_task=0x7f0a0019;
+        /**  Date dialog strings 
+         */
+        public static final int title_set_date=0x7f0a0020;
+        public static final int toast_empty_task_fields=0x7f0a001e;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0b0042;

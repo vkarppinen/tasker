@@ -29,14 +29,14 @@
             android:id="@+id/taskDueDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1.1.2016"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
             android:id="@+id/taskName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Esimerkki tehtävä"
+            android:text=""
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 

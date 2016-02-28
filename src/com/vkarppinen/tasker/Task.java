@@ -1,42 +1,58 @@
 package com.vkarppinen.tasker;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.UUID;
+
+import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Simple task class.
- * @author Valtteri Karppinen, 1.0, 2.12.2015
+ * @author Valtteri Karppinen, 1.0, 2.1.2016
  */
 
 public class Task implements Parcelable {
 	private UUID id;
 	private String name;
 	private Date dateDue;
-	
-	
+	private float alarmId;
+	private PendingIntent alarmIntent;
+
 	/*
 	 * Default constructor.
 	 */
-	public Task(String name, Date dateDue) {
-		this.id = UUID.randomUUID();
+	public Task(String name, String date, String time) {
+    	this.id = UUID.randomUUID();
 		this.name = name;
-		this.dateDue = dateDue;
+		
+		String dateInString = date + " " + time;
+		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault());
+		try {
+			this.dateDue = formatter.parse(dateInString);
+		} catch (ParseException e) {
+			System.err.println("Error parsing task data");
+		}
 	}
 	
 	/*
-	 * Alternative constructor
+	 * Create a new task that comes only from DB.
 	 */
-	public Task(String name) {
-		this.id = UUID.randomUUID();
+	public Task(String id, String name, String date, boolean fromdatabase) {
+		this.id = UUID.fromString(id);
 		this.name = name;
-		this.dateDue = new Date();
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM d HH:mm:ss z yyyy", Locale.ENGLISH);
+		try {
+			this.dateDue = formatter.parse(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 	}
 
-	/*
-	 * Getters
-	 */
+	
 	public UUID getID() { 
 		return this.id;
 	}
@@ -46,43 +62,40 @@ public class Task implements Parcelable {
 	protected Date getDateDue() {
 		return this.dateDue;
 	}
-
-	/*
-	 * Setters
-	 */
-	protected void setName(String name) {
-		// TODO muuta toimimaan
+	public float getAlarmId() {
+		return alarmId;
 	}
-	protected void setDateDue(Object dateDue) {
-		// TODO muuta toimimaan
+	public void setAlarmId(float alarmId) {
+		this.alarmId = alarmId;
+	}
+	public PendingIntent getAlarmIntent() {
+		return alarmIntent;
 	}
 
-	
-	/*
-	 * Custom methods
-	 */
+	public void setAlarmIntent(PendingIntent alarmIntent) {
+		this.alarmIntent = alarmIntent;
+	}
 	public String toString() {	
 		return this.getName();
 	}
+
 	
-	/*
-	 * Parcelable methods 
-	 */
 	
-    
+	/** Parcelable methods **/
+	
 	private Task(Parcel in) {
         this.name = in.readString();
         this.id = UUID.fromString(in.readString());
-        this.dateDue = new Date(); //TODO Tämän pitäisi toimia siten, että kun datepickkeristä tulee data sen perusteella pvm.
+        this.dateDue = new Date(in.readLong());
+
     }
 
-    public void writeToParcel(Parcel out, int flags) {
+	public void writeToParcel(Parcel out, int flags) {
         out.writeString(name);
         out.writeString(id.toString());
-        out.writeString(dateDue.toString());
+        out.writeLong(dateDue.getTime());
     }
 
- 
     public int describeContents() {
         return 0;
     }
@@ -96,4 +109,5 @@ public class Task implements Parcelable {
             return new Task[size];
         }
     };
+
 }
