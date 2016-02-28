@@ -10,6 +10,8 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.media.RingtoneManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -178,6 +180,9 @@ public class Tasks {
 	              .setSmallIcon(R.drawable.ic_notification)
 	              .setContentTitle("A Task is due")
 	              .setPriority(2)
+	              .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+	              .setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 })
+	              .setLights(Color.GREEN, 250, 250)
 	              .setContentText(t.getName());
 		} else {
 			this.builder.setNumber(numTasksDue)
